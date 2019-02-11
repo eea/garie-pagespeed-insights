@@ -1,23 +1,20 @@
 FROM node:8.10.0
 
-RUN mkdir -p /usr/src/garie-pagespeed-insights
+RUN mkdir -p /usr/src/garie-plugin
+RUN mkdir -p /usr/src/garie-plugin/reports
 
-WORKDIR /usr/src/garie-pagespeed-insights
+WORKDIR /usr/src/garie-plugin
 
-COPY package.json config.json /usr/src/garie-pagespeed-insights/
+COPY package.json .
 
-COPY src/ /usr/src/garie-pagespeed-insights/src/
+RUN cd /usr/src/garie-plugin && npm install
 
-RUN ls -ltr /usr/src/garie-pagespeed-insights/
-
-RUN npm install --only=production
-
-COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY . .
 
 EXPOSE 3000
 
-VOLUME ["/usr/src/garie-pagespeed-insights/reports", "/usr/src/garie-lighthouse/logs"]
+VOLUME ["/usr/src/garie-plugin/reports"]
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/src/garie-plugin/docker-entrypoint.sh"]
 
 CMD ["npm", "start"]
