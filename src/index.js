@@ -58,9 +58,10 @@ app.use('/reports', express.static('reports'), serveIndex('reports', { icons: tr
 
 const main = async () => {
   garie_plugin.init({
-    database:'pagespeed-insights',
+    db_name:'pagespeed-insights',
     getData:myGetData,
-    app_name:'pagespeed-insights-results',
+    report_folder_name:'pagespeed-insights-results',
+    plugin_name:'pagespeed-insights',
     app_root: path.join(__dirname, '..'),
     config:config
   });
