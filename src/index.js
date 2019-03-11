@@ -59,7 +59,7 @@ app.use('/reports', express.static('reports'), serveIndex('reports', { icons: tr
 const main = async () => {
   return new Promise(async (resolve, reject) => {
     try{
-      garie_plugin.init({
+      await garie_plugin.init({
         db_name:'pagespeed-insights',
         getData:myGetData,
         report_folder_name:'pagespeed-insights-results',
