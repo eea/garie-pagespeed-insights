@@ -73,8 +73,12 @@ On start garie-pagespeed-insights will start to gather performance metrics for t
 
 | Property | Type                | Description                                                                          |
 | -------- | ------------------- | ------------------------------------------------------------------------------------ |
-| `cron`   | `string` (optional) | Cron timer. Supports syntax can be found [here].(https://www.npmjs.com/package/cron) |
-| `urls`   | `object` (required) | Config for pagespeed-insights. More detail below                                     |
+| `plugins.pagespeed-insights.cron`   | `string` (optional) | Cron timer. Supports syntax can be found [here].(https://www.npmjs.com/package/cron) |
+| `plugins.pagespeed-insights.retry`   | `object` (optional) | Configuration how to retry the failed tasks |
+| `plugins.pagespeed-insights.retry.after`   | `number` (optional, default 30) | Minutes before we retry to execute the tasks |
+| `plugins.pagespeed-insights.retry.times`   | `number` (optional, default 3) | How many time to retry to execute the failed tasks |
+| `plugins.pagespeed-insights.retry.timeRange`   | `number` (optional, default 360) | Period in minutes to be checked in influx, to know if a task failed |
+| `urls`   | `object` (required) | Config for browsertime. More detail below                                            |
 
 **urls object**
 
