@@ -1,6 +1,6 @@
 {
     "name": "garie-pagespeed-insights",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Google Pagespeed insights image for performance metrics",
     "engines": {
         "node": ">=6"
@@ -11,7 +11,7 @@
         "start": "node ./src/index.js"
     },
     "dependencies": {
-        "garie-plugin": "https://github.com/eea/garie-plugin#0.0.9",
+        "garie-plugin": "https://github.com/eea/garie-plugin#0.0.12",
         "request-promise": "^4.2.2",
         "dateformat": "*"
     },
