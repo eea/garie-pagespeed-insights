@@ -1,6 +1,6 @@
 {
     "name": "garie-pagespeed-insights",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Google Pagespeed insights image for performance metrics",
     "engines": {
         "node": ">=6"
