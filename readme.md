@@ -80,8 +80,14 @@ On start garie-pagespeed-insights will start to gather performance metrics for t
 | `plugins.pagespeed-insights.retry.timeRange`   | `number` (optional, default 360) | Period in minutes to be checked in influx, to know if a task failed |
 | `urls`   | `object` (required) | Config for browsertime. More detail below                                            |
 
+MAX_AGE_OF_REPORT_FILES - int (default to 365), Maximum age (in days) of report files that can be deleted.
+MAX_AGE_OF_REPORT_VIDEOS - int (default to 100), Maximum age (in days) of report videos that can be deleted.
+CRON_DELETE_OLD_REPORTS - cronjob (default to '0 5 * * *') The frequency of checking old report files / videos.
+
 **urls object**
 
 | Property | Type                | Description                                |
 | -------- | ------------------- | ------------------------------------------ |
 | `url`    | `string` (required) | Url to get pagespeed-insights metrics for. |
+
+For more information please go to the [garie-plugin](https://github.com/eea/garie-plugin) repo.
